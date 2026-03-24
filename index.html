@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>海外留学診断 | Your Journey Awaits</title>
+    <title>カナダ・オーストラリア専用留学診断</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,16 +23,16 @@
             --gold-light: #E8D5B0;
             --sky: #A8C4CF;
         }
-
+ 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
         body {
             font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
             background: var(--sand);
             min-height: 100vh;
             overflow-x: hidden;
         }
-
+ 
         body::before {
             content: '';
             position: fixed;
@@ -52,7 +51,7 @@
             pointer-events: none;
             z-index: 0;
         }
-
+ 
         .page {
             position: relative;
             z-index: 1;
@@ -63,7 +62,7 @@
             justify-content: flex-start;
             padding: 40px 20px 60px;
         }
-
+ 
         .card {
             background: var(--cream);
             max-width: 580px;
@@ -77,7 +76,7 @@
             position: relative;
             overflow: hidden;
         }
-
+ 
         .card::before {
             content: '';
             position: absolute;
@@ -85,13 +84,12 @@
             height: 3px;
             background: linear-gradient(90deg, var(--rose) 0%, var(--gold) 50%, var(--sage) 100%);
         }
-
-        /* ── Header ── */
+ 
         .site-header {
             text-align: center;
             margin-bottom: 36px;
         }
-
+ 
         .logo-mark {
             display: inline-flex;
             align-items: center;
@@ -104,7 +102,7 @@
             text-transform: uppercase;
             margin-bottom: 16px;
         }
-
+ 
         .logo-mark::before,
         .logo-mark::after {
             content: '';
@@ -113,60 +111,43 @@
             height: 1px;
             background: var(--rose);
         }
-
+ 
         h1 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.6rem;
+            font-size: 2.1rem;
             font-weight: 300;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.03em;
             color: var(--text);
-            line-height: 1.1;
+            line-height: 1.25;
             margin-bottom: 10px;
         }
-
+ 
         h1 em {
             font-style: italic;
             color: var(--rose-deep);
         }
-
+ 
         .tagline {
-            font-size: 0.78rem;
+            font-size: 0.76rem;
             color: var(--text-light);
-            letter-spacing: 0.12em;
+            letter-spacing: 0.1em;
             font-weight: 300;
         }
-
-        /* ── Progress ── */
-        .progress-wrap {
-            margin: 28px 0 36px;
-        }
-
+ 
+        .progress-wrap { margin: 28px 0 36px; }
+ 
         .progress-numbers {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 8px;
         }
-
-        .q-count {
-            font-size: 0.72rem;
-            color: var(--text-light);
-            letter-spacing: 0.08em;
-        }
-
-        .q-percent {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.85rem;
-            color: var(--rose-deep);
-        }
-
-        .progress-track {
-            height: 3px;
-            background: var(--sand-mid);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
+ 
+        .q-count { font-size: 0.72rem; color: var(--text-light); letter-spacing: 0.08em; }
+        .q-percent { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--rose-deep); }
+ 
+        .progress-track { height: 3px; background: var(--sand-mid); border-radius: 2px; overflow: hidden; }
+ 
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--rose) 0%, var(--rose-deep) 100%);
@@ -174,8 +155,7 @@
             transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             width: 0%;
         }
-
-        /* ── Question ── */
+ 
         .q-num-label {
             display: block;
             font-size: 0.68rem;
@@ -185,7 +165,7 @@
             text-transform: uppercase;
             margin-bottom: 12px;
         }
-
+ 
         .q-text {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.22rem;
@@ -195,14 +175,9 @@
             margin-bottom: 32px;
             font-weight: 300;
         }
-
-        /* ── Options ── */
-        .options-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
+ 
+        .options-grid { display: flex; flex-direction: column; gap: 10px; }
+ 
         .opt-btn {
             position: relative;
             background: var(--ivory);
@@ -217,17 +192,15 @@
             text-align: left;
             line-height: 1.5;
             transition: all 0.25s ease;
-            overflow: hidden;
         }
-
+ 
         .opt-btn::before {
             content: attr(data-letter);
             position: absolute;
             left: 18px;
             top: 50%;
             transform: translateY(-50%);
-            width: 22px;
-            height: 22px;
+            width: 22px; height: 22px;
             border-radius: 50%;
             background: var(--sand-mid);
             color: var(--text-mid);
@@ -236,27 +209,13 @@
             display: grid;
             place-items: center;
             font-family: 'Cormorant Garamond', serif;
-            letter-spacing: 0;
             transition: all 0.25s ease;
         }
-
-        .opt-btn:hover {
-            border-color: var(--rose);
-            background: #FEF8F8;
-            transform: translateX(5px);
-            box-shadow: 0 4px 20px rgba(232,175,175,0.2);
-        }
-
-        .opt-btn:hover::before {
-            background: var(--rose);
-            color: white;
-        }
-
-        .opt-btn:active {
-            transform: translateX(5px) scale(0.98);
-        }
-
-        /* ── Back Button ── */
+ 
+        .opt-btn:hover { border-color: var(--rose); background: #FEF8F8; transform: translateX(5px); box-shadow: 0 4px 20px rgba(232,175,175,0.2); }
+        .opt-btn:hover::before { background: var(--rose); color: white; }
+        .opt-btn:active { transform: translateX(5px) scale(0.98); }
+ 
         .back-btn {
             display: inline-flex;
             align-items: center;
@@ -272,22 +231,11 @@
             letter-spacing: 0.05em;
             transition: color 0.2s;
         }
-
-        .back-btn:hover {
-            color: var(--rose-deep);
-        }
-
-        .back-btn svg {
-            width: 14px;
-            height: 14px;
-            transition: transform 0.2s;
-        }
-
-        .back-btn:hover svg {
-            transform: translateX(-3px);
-        }
-
-        /* ── Notice ── */
+ 
+        .back-btn:hover { color: var(--rose-deep); }
+        .back-btn svg { width: 14px; height: 14px; transition: transform 0.2s; }
+        .back-btn:hover svg { transform: translateX(-3px); }
+ 
         .notice-box {
             margin-top: 28px;
             padding: 16px 20px;
@@ -298,25 +246,13 @@
             color: var(--text-light);
             line-height: 1.8;
         }
-
-        .deco-flower {
-            text-align: center;
-            font-size: 1.4rem;
-            margin-bottom: 8px;
-            opacity: 0.5;
-        }
-
-        /* ── RESULT ── */
-        #result-screen {
-            display: none;
-        }
-
-        .result-hero {
-            text-align: center;
-            margin-bottom: 32px;
-            position: relative;
-        }
-
+ 
+        .deco-flower { text-align: center; font-size: 1.4rem; margin-bottom: 8px; opacity: 0.5; }
+ 
+        #result-screen { display: none; }
+ 
+        .result-hero { text-align: center; margin-bottom: 32px; }
+ 
         .result-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--rose-light), var(--gold-light));
@@ -329,7 +265,7 @@
             border-radius: 50px;
             margin-bottom: 18px;
         }
-
+ 
         .result-plan-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2rem;
@@ -338,72 +274,19 @@
             line-height: 1.3;
             margin-bottom: 6px;
         }
-
-        .result-plan-title strong {
-            font-weight: 600;
-            color: var(--rose-deep);
-        }
-
-        .result-subtitle {
-            font-size: 0.78rem;
-            color: var(--text-light);
-            letter-spacing: 0.08em;
-        }
-
-        /* ── Score Bar ── */
-        .score-section {
-            background: var(--ivory);
-            border-radius: 20px;
-            padding: 22px 24px;
-            margin-bottom: 24px;
-        }
-
-        .score-section-title {
-            font-size: 0.68rem;
-            letter-spacing: 0.18em;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 16px;
-        }
-
-        .score-row {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 10px;
-        }
-
-        .score-label {
-            font-size: 0.78rem;
-            color: var(--text-mid);
-            width: 110px;
-            flex-shrink: 0;
-        }
-
-        .score-bar-track {
-            flex: 1;
-            height: 6px;
-            background: var(--sand-mid);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .score-bar-fill {
-            height: 100%;
-            border-radius: 3px;
-            width: 0%;
-            transition: width 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
-        }
-
-        .score-val {
-            font-size: 0.75rem;
-            color: var(--text-mid);
-            width: 30px;
-            text-align: right;
-            flex-shrink: 0;
-        }
-
-        /* ── Counseling Note ── */
+ 
+        .result-plan-title strong { font-weight: 600; color: var(--rose-deep); }
+        .result-subtitle { font-size: 0.78rem; color: var(--text-light); letter-spacing: 0.08em; }
+ 
+        .score-section { background: var(--ivory); border-radius: 20px; padding: 22px 24px; margin-bottom: 24px; }
+        .score-section-title { font-size: 0.68rem; letter-spacing: 0.18em; color: var(--text-light); text-transform: uppercase; margin-bottom: 16px; }
+ 
+        .score-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+        .score-label { font-size: 0.78rem; color: var(--text-mid); width: 110px; flex-shrink: 0; }
+        .score-bar-track { flex: 1; height: 6px; background: var(--sand-mid); border-radius: 3px; overflow: hidden; }
+        .score-bar-fill { height: 100%; border-radius: 3px; width: 0%; transition: width 1s cubic-bezier(0.4, 0, 0.2, 1) 0.3s; }
+        .score-val { font-size: 0.75rem; color: var(--text-mid); width: 30px; text-align: right; flex-shrink: 0; }
+ 
         .counseling-card {
             background: linear-gradient(135deg, #FEF8F8 0%, #FBF6F0 100%);
             border-radius: 20px;
@@ -412,48 +295,23 @@
             border: 1px solid var(--rose-light);
             position: relative;
         }
-
+ 
         .counseling-card::before {
             content: '＂';
             position: absolute;
-            top: -5px;
-            left: 20px;
+            top: -5px; left: 20px;
             font-family: 'Cormorant Garamond', serif;
             font-size: 3rem;
             color: var(--rose-light);
             line-height: 1;
         }
-
-        .counseling-label {
-            font-size: 0.65rem;
-            letter-spacing: 0.2em;
-            color: var(--rose-deep);
-            font-weight: 500;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .counseling-text {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 0.9rem;
-            line-height: 1.9;
-            color: var(--text);
-            font-weight: 300;
-        }
-
-        /* ── Plan Details ── */
-        .plan-detail {
-            margin-bottom: 24px;
-        }
-
-        .plan-detail-title {
-            font-size: 0.68rem;
-            letter-spacing: 0.18em;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
+ 
+        .counseling-label { font-size: 0.65rem; letter-spacing: 0.2em; color: var(--rose-deep); font-weight: 500; text-transform: uppercase; margin-bottom: 10px; }
+        .counseling-text { font-family: 'Noto Serif JP', serif; font-size: 0.9rem; line-height: 1.9; color: var(--text); font-weight: 300; }
+ 
+        .plan-detail { margin-bottom: 24px; }
+        .plan-detail-title { font-size: 0.68rem; letter-spacing: 0.18em; color: var(--text-light); text-transform: uppercase; margin-bottom: 12px; }
+ 
         .plan-item {
             display: flex;
             align-items: flex-start;
@@ -465,54 +323,17 @@
             border: 1px solid transparent;
             transition: border-color 0.2s;
         }
-
-        .plan-item:hover {
-            border-color: var(--rose-light);
-        }
-
-        .plan-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .plan-item-name {
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 3px;
-        }
-
-        .plan-item-desc {
-            font-size: 0.76rem;
-            color: var(--text-light);
-            line-height: 1.5;
-        }
-
-        /* ── Cities ── */
-        .cities-section {
-            margin-bottom: 28px;
-        }
-
-        .cities-title {
-            font-size: 0.68rem;
-            letter-spacing: 0.18em;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .cities-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
-
+ 
+        .plan-item:hover { border-color: var(--rose-light); }
+        .plan-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+        .plan-item-name { font-size: 0.88rem; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+        .plan-item-desc { font-size: 0.76rem; color: var(--text-light); line-height: 1.5; }
+ 
+        .cities-section { margin-bottom: 28px; }
+        .cities-title { font-size: 0.68rem; letter-spacing: 0.18em; color: var(--text-light); text-transform: uppercase; margin-bottom: 12px; }
+ 
+        .cities-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+ 
         .city-card {
             background: var(--ivory);
             border-radius: 16px;
@@ -521,92 +342,28 @@
             border: 1px solid var(--sand-mid);
             transition: all 0.25s;
         }
-
-        .city-card:hover {
-            border-color: var(--rose);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(232,175,175,0.15);
-        }
-
+ 
+        .city-card:hover { border-color: var(--rose); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(232,175,175,0.15); }
         .city-flag { font-size: 1.4rem; margin-bottom: 6px; }
-        .city-name {
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: var(--text);
-            margin-bottom: 3px;
-        }
-        .city-tag {
-            font-size: 0.64rem;
-            color: var(--text-light);
-        }
-
-        /* ── Budget & Duration ── */
-        .info-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 28px;
-        }
-
-        .info-chip {
-            background: var(--ivory);
-            border-radius: 16px;
-            padding: 18px 16px;
-            text-align: center;
-        }
-
-        .info-chip-label {
-            font-size: 0.64rem;
-            letter-spacing: 0.15em;
-            color: var(--text-light);
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .info-chip-value {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            color: var(--text);
-            font-weight: 400;
-        }
-
-        /* ── Tips ── */
-        .tips-card {
-            background: linear-gradient(135deg, #F5F9F4 0%, #EDF3F0 100%);
-            border-radius: 16px;
-            padding: 18px 20px;
-            margin-bottom: 24px;
-            border-left: 3px solid var(--sage);
-        }
-
-        .tips-label {
-            font-size: 0.65rem;
-            letter-spacing: 0.18em;
-            color: var(--sage);
-            text-transform: uppercase;
-            font-weight: 500;
-            margin-bottom: 8px;
-        }
-
-        .tips-text {
-            font-size: 0.82rem;
-            color: var(--text-mid);
-            line-height: 1.7;
-        }
-
-        /* ── Counselor Card ── */
-        .counselor-section {
-            margin-bottom: 28px;
-        }
-
+        .city-name { font-size: 0.78rem; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+        .city-tag { font-size: 0.64rem; color: var(--text-light); }
+ 
+        .info-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+        .info-chip { background: var(--ivory); border-radius: 16px; padding: 18px 16px; text-align: center; }
+        .info-chip-label { font-size: 0.64rem; letter-spacing: 0.15em; color: var(--text-light); text-transform: uppercase; margin-bottom: 8px; }
+        .info-chip-value { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text); font-weight: 400; }
+ 
+        .counselor-section { margin-bottom: 28px; }
+ 
         .counselor-section-title {
-            font-size: 0.68rem;
-            letter-spacing: 0.18em;
-            color: var(--text-light);
-            text-transform: uppercase;
+            font-size: 0.92rem;
+            font-family: 'Noto Serif JP', serif;
+            font-weight: 400;
+            color: var(--text-mid);
             margin-bottom: 14px;
+            line-height: 1.6;
         }
-
+ 
         .counselor-card {
             background: linear-gradient(135deg, #FEF8F8 0%, #FBF0F0 100%);
             border: 1.5px solid var(--rose-light);
@@ -616,12 +373,10 @@
             align-items: center;
             gap: 20px;
         }
-
+ 
         .counselor-avatar {
-            width: 76px;
-            height: 76px;
+            width: 76px; height: 76px;
             border-radius: 50%;
-            object-fit: cover;
             border: 3px solid white;
             box-shadow: 0 4px 16px rgba(196,132,122,0.2);
             flex-shrink: 0;
@@ -632,29 +387,11 @@
             font-size: 2rem;
             overflow: hidden;
         }
-
-        .counselor-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .counselor-info {}
-
-        .counselor-name {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--text);
-            margin-bottom: 6px;
-        }
-
-        .counselor-tags {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
+ 
+        .counselor-avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .counselor-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+        .counselor-tags { display: flex; flex-direction: column; gap: 3px; }
+ 
         .counselor-tag {
             font-size: 0.72rem;
             color: var(--text-mid);
@@ -663,14 +400,9 @@
             gap: 5px;
             line-height: 1.4;
         }
-
-        .counselor-tag::before {
-            content: '✦';
-            color: var(--rose);
-            font-size: 0.55rem;
-            flex-shrink: 0;
-        }
-
+ 
+        .counselor-tag::before { content: '✦'; color: var(--rose); font-size: 0.55rem; flex-shrink: 0; }
+ 
         .counselor-cta-note {
             font-size: 0.72rem;
             color: var(--rose-deep);
@@ -679,15 +411,9 @@
             padding-top: 10px;
             border-top: 1px solid var(--rose-light);
         }
-
-        /* ── CTA ── */
-        .cta-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 10px;
-        }
-
+ 
+        .cta-group { display: flex; flex-direction: column; gap: 12px; margin-top: 10px; }
+ 
         .cta-primary {
             display: block;
             background: linear-gradient(135deg, var(--text) 0%, #5A4440 100%);
@@ -703,7 +429,7 @@
             position: relative;
             overflow: hidden;
         }
-
+ 
         .cta-primary::before {
             content: '';
             position: absolute;
@@ -712,61 +438,62 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-
+ 
         .cta-primary:hover::before { opacity: 1; }
         .cta-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(58,46,42,0.2); }
         .cta-primary span { position: relative; z-index: 1; }
-
+ 
         .cta-secondary {
             display: block;
             background: transparent;
-            color: var(--text-light);
+            color: var(--text-mid);
             text-align: center;
-            padding: 14px;
+            padding: 15px;
             border-radius: 50px;
             border: 1.5px solid var(--sand-mid);
             text-decoration: none;
-            font-size: 0.82rem;
-            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            letter-spacing: 0.04em;
             cursor: pointer;
             transition: all 0.25s;
             font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
         }
-
-        .cta-secondary:hover {
-            border-color: var(--rose);
-            color: var(--rose-deep);
+ 
+        .cta-secondary:hover { border-color: var(--rose); color: var(--rose-deep); }
+ 
+        .cta-reset {
+            display: block;
+            background: transparent;
+            color: var(--text-light);
+            text-align: center;
+            padding: 10px;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.76rem;
+            cursor: pointer;
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            transition: color 0.2s;
         }
-
-        /* ── Animations ── */
+ 
+        .cta-reset:hover { color: var(--rose-deep); }
+ 
+        .footer-note { text-align: center; font-size: 0.68rem; color: var(--text-light); margin-top: 24px; line-height: 1.8; }
+ 
         @keyframes fadeUp {
             from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
+            to   { opacity: 1; transform: translateY(0); }
         }
-
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
+ 
         .stagger > * { opacity: 0; }
         .stagger > *:nth-child(1) { animation: fadeUp 0.5s 0.05s ease forwards; }
         .stagger > *:nth-child(2) { animation: fadeUp 0.5s 0.12s ease forwards; }
         .stagger > *:nth-child(3) { animation: fadeUp 0.5s 0.19s ease forwards; }
         .stagger > *:nth-child(4) { animation: fadeUp 0.5s 0.26s ease forwards; }
-
-        /* ── Footer ── */
-        .footer-note {
-            text-align: center;
-            font-size: 0.68rem;
-            color: var(--text-light);
-            margin-top: 24px;
-            line-height: 1.8;
-        }
-
+        .stagger > *:nth-child(5) { animation: fadeUp 0.5s 0.33s ease forwards; }
+ 
         @media (max-width: 520px) {
             .card { padding: 44px 28px; border-radius: 28px; }
-            h1 { font-size: 2rem; }
+            h1 { font-size: 1.7rem; }
             .cities-grid { grid-template-columns: 1fr 1fr; }
             .info-row { grid-template-columns: 1fr; }
             .counselor-card { flex-direction: column; text-align: center; align-items: center; }
@@ -776,188 +503,233 @@
 <body>
 <div class="page">
 <div class="card">
-
+ 
     <!-- ===== QUIZ SCREEN ===== -->
     <div id="quiz-screen">
         <header class="site-header">
             <div class="logo-mark">Study Abroad</div>
-            <h1>Find Your <em>Journey</em></h1>
-            <p class="tagline">海外留学・スタイル診断 ― オーストラリア / カナダ / フィリピン専門</p>
+            <h1>カナダ・オーストラリア<br><em>専用留学診断</em></h1>
+            <p class="tagline">オーストラリア / カナダ / フィリピン専門カウンセラーが提案</p>
         </header>
-
+ 
         <div class="progress-wrap">
             <div class="progress-numbers">
-                <span class="q-count" id="q-count">Q 1 / 8</span>
+                <span class="q-count" id="q-count">Q 1 / 9</span>
                 <span class="q-percent" id="q-percent">0%</span>
             </div>
             <div class="progress-track">
                 <div class="progress-fill" id="progress-fill"></div>
             </div>
         </div>
-
+ 
         <div id="q-content"></div>
-
+ 
         <div class="notice-box">
             <div class="deco-flower">✦</div>
             直感で、今の自分に一番近いものを選んでください。答えに正解はありません。<br>
             診断結果はあなたへの<strong>プロのアドバイス</strong>として活用してください。
         </div>
     </div>
-
+ 
     <!-- ===== RESULT SCREEN ===== -->
     <div id="result-screen">
-
+ 
         <div class="result-hero">
             <div class="result-badge" id="res-badge">Your Best Plan</div>
             <div class="result-plan-title" id="res-title"></div>
             <div class="result-subtitle" id="res-subtitle"></div>
         </div>
-
-        <div class="score-section" id="score-section">
+ 
+        <div class="score-section">
             <div class="score-section-title">あなたの適性スコア</div>
             <div id="score-bars"></div>
         </div>
-
+ 
         <div class="counseling-card">
             <div class="counseling-label">Counselor's Note</div>
             <div class="counseling-text" id="res-counseling"></div>
         </div>
-
+ 
         <div class="plan-detail">
             <div class="plan-detail-title">おすすめプラン詳細</div>
             <div id="res-plan-items"></div>
         </div>
-
+ 
         <div class="cities-section">
             <div class="cities-title">Recommended Cities</div>
             <div class="cities-grid" id="res-cities"></div>
         </div>
-
+ 
         <div class="info-row" id="res-info-row"></div>
-
-        <div class="tips-card" id="res-tips">
-            <div class="tips-label">✦ Success Point</div>
-            <div class="tips-text" id="res-tips-text"></div>
-        </div>
-
-        <!-- Counselor Recommendation -->
+ 
+        <!-- Counselor -->
         <div class="counselor-section" id="counselor-section" style="display:none;">
-            <div class="counselor-section-title">担当カウンセラーのご紹介</div>
+            <div class="counselor-section-title">経験豊富な留学カウンセラーに相談してみるならこの方👇</div>
             <div class="counselor-card" id="counselor-card"></div>
         </div>
-
+ 
+        <!-- CTAs -->
         <div class="cta-group">
-            <a href="https://liff.line.me/2005482900-3rlrmjL2?calendar_salon_id=2443&ts=1774353317" target="_blank" class="cta-primary"><span id="cta-primary-text">🌿 無料カウンセリングに申し込む</span></a>
-            <button class="cta-secondary" onclick="resetQuiz()">もう一度診断する</button>
+            <a href="https://s.lmes.jp/landing-qr/2005482900-3O2PGxpd?uLand=eYM4I6" target="_blank" class="cta-primary">
+                <span id="cta-primary-text">🌿 無料カウンセリングに申し込む</span>
+            </a>
+            <a href="https://s.lmes.jp/landing-qr/2005482900-3O2PGxpd?uLand=eYM4I6" target="_blank" class="cta-secondary">
+                もっと詳しい留学情報がほしい
+            </a>
+            <button class="cta-reset" onclick="resetQuiz()">↩ もう一度診断する</button>
         </div>
-
+ 
         <p class="footer-note">
             ※診断結果はあくまでも目安です。最適なプランは個人の状況によって異なります。<br>
             専門カウンセラーに相談することをおすすめします。
         </p>
     </div>
-
+ 
 </div>
 </div>
-
+ 
 <script>
+// ── 都市マスタ ──
+const CITIES = {
+    australia: [
+        { flag: '🇦🇺', name: 'シドニー',         tag: 'IT・看護に強い' },
+        { flag: '🇦🇺', name: 'メルボルン',       tag: 'オシャレ×多国籍' },
+        { flag: '🇦🇺', name: 'ブリスベン',       tag: '日本人少なめ' },
+        { flag: '🇦🇺', name: 'パース',           tag: '高賃金・仕事豊富' },
+        { flag: '🇦🇺', name: 'ケアンズ',         tag: '農業×観光リゾート' },
+        { flag: '🇦🇺', name: 'ゴールドコースト', tag: 'ビーチ×仕事' },
+        { flag: '🇦🇺', name: 'バイロンベイ',     tag: 'ナチュラル×自由' },
+    ],
+    canada: [
+        { flag: '🇨🇦', name: 'バンクーバー',     tag: '自然×都会の両立' },
+        { flag: '🇨🇦', name: 'トロント',         tag: 'ビジネス留学の聖地' },
+        { flag: '🇨🇦', name: 'カルガリー',       tag: '就労チャンス多い' },
+        { flag: '🇨🇦', name: 'モントリオール',   tag: 'バイリンガル都市' },
+        { flag: '🇨🇦', name: 'ビクトリア',       tag: '自然豊か・住みやすい' },
+    ],
+    philippines: [
+        { flag: '🇵🇭', name: 'セブ島', tag: '語学学校が集中' },
+        { flag: '🇵🇭', name: 'バギオ', tag: '涼しい高原都市' },
+        { flag: '🇵🇭', name: 'マニラ', tag: '大都市・選択肢豊富' },
+    ],
+};
+ 
 const questions = [
+    // Q1: 年齢
     {
         q: "今、あなたの年齢は？",
         sub: "渡航ビザの種類や選択肢が変わります",
         options: [
             { text: "18〜22歳", v: { age: 'young' } },
-            { text: "23〜26歳", v: { age: 'mid' } },
-            { text: "27〜30歳", v: { age: 'late' } },
+            { text: "23〜26歳", v: { age: 'mid'   } },
+            { text: "27〜30歳", v: { age: 'late'  } },
             { text: "31歳以上", v: { age: 'adult' } }
         ]
     },
+    // Q2: 行きたい国（新規）
+    {
+        q: "行きたい国はどこですか？",
+        sub: "希望の国に合わせたおすすめ都市をご紹介します",
+        options: [
+            { text: "🇦🇺 オーストラリア",  v: { country: 'australia'  } },
+            { text: "🇨🇦 カナダ",          v: { country: 'canada'     } },
+            { text: "🇵🇭 フィリピンのみ",  v: { country: 'philippines'} },
+            { text: "🤔 まだ悩んでいる",   v: { country: 'undecided'  } }
+        ]
+    },
+    // Q3: 英語力
     {
         q: "今の英語力を正直に教えてください",
         sub: "適切なコースとルートを提案するために必要です",
         options: [
-            { text: "ほぼゼロ…中学レベルも怪しい", v: { eng: 'zero' } },
-            { text: "基礎はある。でも会話は全く自信ない", v: { eng: 'basic' } },
-            { text: "日常会話ならなんとかなる（英検2級程度）", v: { eng: 'mid' } },
-            { text: "ビジネスや専門的な場面でも問題ない", v: { eng: 'high' } }
+            { text: "ほぼゼロ…中学レベルも怪しい",             v: { eng: 'zero'  } },
+            { text: "基礎はある。でも会話は全く自信ない",       v: { eng: 'basic' } },
+            { text: "日常会話ならなんとかなる（英検2級程度）",  v: { eng: 'mid'   } },
+            { text: "ビジネスや専門的な場面でも問題ない",       v: { eng: 'high'  } }
         ]
     },
+    // Q4: 渡航の目的（選択肢変更）
     {
         q: "渡航の一番の目的は何ですか？",
         sub: "複数ある場合は「最も強い動機」を選んでください",
         options: [
-            { text: "英語力を根本から鍛え直したい", v: { goal: 'english' } },
-            { text: "海外で働いてお金を稼ぎたい・貯めたい", v: { goal: 'work' } },
-            { text: "海外の資格・学位でキャリアをアップしたい", v: { goal: 'career' } },
-            { text: "自分を変えたい・リセットして新しい自分になりたい", v: { goal: 'reset' } }
+            { text: "英語力を根本から鍛え直したい",         v: { goal: 'english' } },
+            { text: "海外で働いてお金を稼ぎたい・貯めたい", v: { goal: 'work'    } },
+            { text: "海外の資格・学位でキャリアをアップしたい", v: { goal: 'career'  } },
+            { text: "新しい価値観に触れたい",               v: { goal: 'values'  } },
+            { text: "とにかく海外に行ってみたい",           v: { goal: 'curious' } }
         ]
     },
+    // Q5: 自己資金
     {
         q: "用意できる自己資金はどのくらい？",
         sub: "渡航前の貯金額（渡航費・学費・生活費の合計）",
         options: [
-            { text: "50〜100万円未満", v: { budget: 'low' } },
-            { text: "100〜200万円", v: { budget: 'mid' } },
-            { text: "200〜350万円", v: { budget: 'high' } },
-            { text: "350万円以上", v: { budget: 'pro' } }
+            { text: "50〜100万円未満", v: { budget: 'low'  } },
+            { text: "100〜200万円",    v: { budget: 'mid'  } },
+            { text: "200〜350万円",    v: { budget: 'high' } },
+            { text: "350万円以上",     v: { budget: 'pro'  } }
         ]
     },
+    // Q6: 滞在期間
     {
         q: "希望する滞在期間は？",
         sub: "仕事・学校などの事情も考慮して選んでください",
         options: [
-            { text: "3〜6ヶ月（短期集中でいい）", v: { dur: 'short' } },
-            { text: "6ヶ月〜1年（一般的な期間）", v: { dur: 'mid' } },
-            { text: "1〜2年（じっくり腰を据えたい）", v: { dur: 'long' } },
+            { text: "3〜6ヶ月（短期集中でいい）",               v: { dur: 'short' } },
+            { text: "6ヶ月〜1年（一般的な期間）",               v: { dur: 'mid'   } },
+            { text: "1〜2年（じっくり腰を据えたい）",           v: { dur: 'long'  } },
             { text: "2年以上・移住も視野（本気でキャリアを作りたい）", v: { dur: 'pr' } }
         ]
     },
+    // Q7: 性格（3つ目変更）
     {
         q: "あなたの性格に最も近いのは？",
         sub: "向いている環境・サポート体制を判断します",
         options: [
-            { text: "行動力抜群！まず飛び込んで考えるタイプ", v: { type: 'active' } },
-            { text: "計画派。準備を完璧にしてから動きたい", v: { type: 'planner' } },
-            { text: "流されやすい。誰かのサポートや仲間が必要", v: { type: 'passive' } },
-            { text: "マイペース。一人でコツコツ進めるのが好き", v: { type: 'solo' } }
+            { text: "行動力抜群！まず飛び込んで考えるタイプ",           v: { type: 'active'  } },
+            { text: "計画派。準備を完璧にしてから動きたい",             v: { type: 'planner' } },
+            { text: "心配性な部分がある、誰かにサポートしてもらいたい", v: { type: 'passive' } },
+            { text: "マイペース。一人でコツコツ進めるのが好き",         v: { type: 'solo'    } }
         ]
     },
+    // Q8: 生活環境
     {
         q: "どんな生活環境が理想？",
         sub: "都市や地域の候補を絞ります",
         options: [
-            { text: "オシャレなカフェ・ショッピングが充実した大都会", v: { env: 'urban' } },
-            { text: "海や自然があるゆったりとしたリゾート系", v: { env: 'nature' } },
-            { text: "日本人が少なく現地に溶け込みやすい地方都市", v: { env: 'local' } },
-            { text: "安全で日本人コミュニティがある程度ある環境", v: { env: 'safe' } }
+            { text: "オシャレなカフェ・ショッピングが充実した大都会", v: { env: 'urban'  } },
+            { text: "海や自然があるゆったりとしたリゾート系",         v: { env: 'nature' } },
+            { text: "日本人が少なく現地に溶け込みやすい地方都市",     v: { env: 'local'  } },
+            { text: "安全で日本人コミュニティがある程度ある環境",     v: { env: 'safe'   } }
         ]
     },
+    // Q9: 帰国後
     {
         q: "帰国後、どうなっていたい？",
         sub: "逆算してベストなプランを提案します",
         options: [
-            { text: "英語を武器に転職・年収アップを実現したい", v: { after: 'job' } },
-            { text: "海外での貯金＋経験で、次のステージに進みたい", v: { after: 'money' } },
-            { text: "専門資格や学歴を取得してスキルを証明したい", v: { after: 'degree' } },
-            { text: "内面の成長・価値観の変化を手に入れたい", v: { after: 'growth' } }
+            { text: "英語を武器に転職・年収アップを実現したい",       v: { after: 'job'    } },
+            { text: "海外での貯金＋経験で、次のステージに進みたい",   v: { after: 'money'  } },
+            { text: "専門資格や学歴を取得してスキルを証明したい",     v: { after: 'degree' } },
+            { text: "内面の成長・価値観の変化を手に入れたい",         v: { after: 'growth' } }
         ]
     }
 ];
-
+ 
 let current = 0;
 let answers = {};
-// answersHistory: array of answer values at each step, for back navigation
 let answersHistory = [];
-
+ 
 function render() {
     const content = document.getElementById('q-content');
     content.style.opacity = '0';
     content.style.transform = 'translateY(12px)';
-
+ 
     setTimeout(() => {
         const d = questions[current];
         const showBack = current > 0;
-
+ 
         content.innerHTML = `
             ${showBack ? `<button class="back-btn" onclick="goBack()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
@@ -974,23 +746,22 @@ function render() {
         content.style.transition = 'all 0.4s cubic-bezier(0.4,0,0.2,1)';
         content.style.opacity = '1';
         content.style.transform = 'translateY(0)';
-
+ 
         const pct = Math.round((current / questions.length) * 100);
         document.getElementById('progress-fill').style.width = pct + '%';
         document.getElementById('q-count').textContent = `Q ${current + 1} / ${questions.length}`;
         document.getElementById('q-percent').textContent = pct + '%';
     }, 150);
 }
-
+ 
 function next(i) {
-    // Save the current answer state snapshot for back navigation
     answersHistory.push({ index: current, answers: { ...answers } });
     answers = { ...answers, ...questions[current].options[i].v };
     current++;
     if (current < questions.length) render();
     else showResult();
 }
-
+ 
 function goBack() {
     if (answersHistory.length === 0) return;
     const prev = answersHistory.pop();
@@ -998,33 +769,84 @@ function goBack() {
     answers = prev.answers;
     render();
 }
-
+ 
 function showResult() {
     document.getElementById('progress-fill').style.width = '100%';
     document.getElementById('q-percent').textContent = '100%';
-
     setTimeout(() => {
         document.getElementById('quiz-screen').style.display = 'none';
         const rs = document.getElementById('result-screen');
         rs.style.display = 'block';
         rs.style.opacity = '0';
-        setTimeout(() => {
-            rs.style.transition = 'opacity 0.6s ease';
-            rs.style.opacity = '1';
-        }, 50);
+        setTimeout(() => { rs.style.transition = 'opacity 0.6s ease'; rs.style.opacity = '1'; }, 50);
         buildResult();
     }, 500);
 }
-
+ 
+// 選んだ国・目的・環境に応じておすすめ都市3件を返す
+function getCities(a) {
+    const c = a.country;
+ 
+    if (c === 'philippines') return CITIES.philippines.slice(0, 3);
+ 
+    if (c === 'canada') {
+        if (a.env === 'urban')  return [CITIES.canada[1], CITIES.canada[0], CITIES.canada[3]];
+        if (a.env === 'nature') return [CITIES.canada[4], CITIES.canada[0], CITIES.canada[2]];
+        return CITIES.canada.slice(0, 3);
+    }
+ 
+    if (c === 'australia') {
+        if (a.env === 'nature') return [CITIES.australia[6], CITIES.australia[4], CITIES.australia[5]];
+        if (a.env === 'urban')  return [CITIES.australia[1], CITIES.australia[0], CITIES.australia[2]];
+        if (a.goal === 'work' || a.after === 'money') return [CITIES.australia[3], CITIES.australia[4], CITIES.australia[2]];
+        return [CITIES.australia[0], CITIES.australia[1], CITIES.australia[2]];
+    }
+ 
+    // undecided: フィリピン経由プランならセブ+豪州、それ以外は豪加ミックス
+    const isPhilFirst = a.eng === 'zero' || (a.eng === 'basic' && a.type === 'passive') || (a.budget === 'low' && a.eng !== 'high');
+    if (isPhilFirst) return [CITIES.philippines[0], CITIES.australia[2], CITIES.australia[5]];
+    return [CITIES.australia[1], CITIES.canada[0], CITIES.australia[0]];
+}
+ 
+// カウンセラー決定（国選択を最優先）
+function getCounselor(a, cities) {
+    if (a.country === 'australia') return 'tomomi';
+    if (a.country === 'canada')    return 'haruka';
+    if (a.country === 'philippines') return 'tomomi'; // 豪州ルートにつながるためTomomi
+    // undecided: 都市の多数決
+    const au = cities.filter(x => x.flag === '🇦🇺').length;
+    const ca = cities.filter(x => x.flag === '🇨🇦').length;
+    return ca > au ? 'haruka' : 'tomomi';
+}
+ 
 function buildResult() {
     const a = answers;
     let plan = {};
-    // Track which country is recommended
-    let recommendedCountry = null; // 'australia', 'canada', 'both', 'philippines'
-
-    // 1. 大人の本格進学
-    if (a.age === 'adult' || a.budget === 'pro' || (a.goal === 'career' && a.after === 'degree')) {
-        recommendedCountry = 'australia'; // primary recommendation
+ 
+    // ── 判定ロジック ──
+ 
+    if (a.country === 'philippines') {
+        plan = {
+            badge: 'コスパ最強・英語集中プラン',
+            title: 'フィリピン留学',
+            titleSub: 'セブ島スパルタ英語集中プラン',
+            subtitle: 'フィリピン ― マンツーマン授業で英語力を爆上げ',
+            counseling: `フィリピン・セブ島は<strong>マンツーマン授業が充実した語学学校</strong>が多く、英語を短期間で集中的に鍛えるには世界でもトップクラスの環境です。授業料・寮費・食費込みで月15〜25万円程度（学校やプランにより変動）と欧米留学の1/2〜1/3のコストで通えるのも魅力。ここで英語の基礎を固めてから豪州・カナダへ渡るルートも非常に人気です。<br><small style="font-size:0.75rem;color:var(--text-light);">※費用はペソ・円の為替レートや学校によって変動します。最新情報は各学校にご確認ください。</small>`,
+            scores: [
+                { label: '英語上達速度',       val: 98, color: 'var(--rose-deep)' },
+                { label: 'コストパフォーマンス', val: 90, color: 'var(--gold)' },
+                { label: '心理的安全性',        val: 82, color: 'var(--sage)' },
+                { label: 'キャリア向上度',      val: 65, color: 'var(--sky)' }
+            ],
+            planItems: [
+                { icon: '🇵🇭', bg: '#FFF8E7', name: 'スパルタ語学学校 3〜6ヶ月', desc: 'マンツーマン授業中心。1日6〜8コマの集中英語漬け生活。費用は月15〜25万円程度（為替変動あり）' },
+                { icon: '🏠', bg: '#FEF1F1', name: '学校寮での共同生活', desc: '世界中の留学生と24時間英語環境。友達ができやすく英語上達も加速' },
+                { icon: '✈️', bg: '#F5F9F4', name: '豪州・カナダへのステップアップも可能', desc: 'フィリピンで英語基礎を固めてから渡航するルートが最も効率的' }
+            ],
+            budget: '60〜150万円',
+            duration: '3〜6ヶ月',
+        };
+    } else if (a.age === 'adult' || a.budget === 'pro' || (a.goal === 'career' && a.after === 'degree')) {
         plan = {
             badge: '本格キャリアアッププラン',
             title: '大人の本気進学',
@@ -1033,118 +855,82 @@ function buildResult() {
             counseling: `年齢や資金・目標を見ると、単なるワーホリや語学留学では物足りません。現地の州立TAFE（職業訓練校）やカレッジで<strong>国際的に認められた専門資格</strong>を取得し、帰国後のキャリアアップ・現地就職・永住権申請を視野に入れたプランが最適です。特に看護・IT・調理・ビジネス系は就労ビザへの移行率が高く、<strong>しっかり「形」に残る留学</strong>が実現できます。`,
             scores: [
                 { label: 'キャリア向上度', val: 95, color: 'var(--rose-deep)' },
-                { label: '英語上達速度', val: 80, color: 'var(--gold)' },
-                { label: '収入獲得力', val: 75, color: 'var(--sage)' },
-                { label: '自己成長度', val: 90, color: 'var(--sky)' }
+                { label: '英語上達速度',   val: 80, color: 'var(--gold)'      },
+                { label: '収入獲得力',     val: 75, color: 'var(--sage)'      },
+                { label: '自己成長度',     val: 90, color: 'var(--sky)'       }
             ],
             planItems: [
                 { icon: '🎓', bg: '#FEF1F1', name: 'TAFE / カレッジ入学', desc: '政府認定の職業訓練。看護・IT・調理・ビジネス等の専門資格が取得可能' },
                 { icon: '💼', bg: '#F5F9F4', name: '就労ビザ移行サポート', desc: '卒業後は就労ビザ（482/485等）申請で現地でのキャリアが開ける' },
                 { icon: '🌏', bg: '#F0F5F9', name: '永住権（PR）への道', desc: '特定職種は雇用主スポンサーを通じてPR申請も現実的に検討できる' }
             ],
-            cities: [
-                { flag: '🇦🇺', name: 'シドニー', tag: 'IT・看護に強い' },
-                { flag: '🇦🇺', name: 'メルボルン', tag: '大学・TAFE集中' },
-                { flag: '🇨🇦', name: 'トロント', tag: 'ビジネス留学の聖地' }
-            ],
             budget: '200〜400万円',
             duration: '1〜2年+',
-            tips: '渡航前に英語力をある程度仕上げておくと、入学できるコースの幅が大きく広がります。フィリピン3ヶ月→オーストラリア進学の2カ国プランも人気です。'
         };
-    }
-    // 2. フィリピン→豪加 2カ国プラン
-    else if (a.eng === 'zero' || (a.eng === 'basic' && a.type === 'passive') || (a.budget === 'low' && a.eng !== 'high')) {
-        recommendedCountry = 'australia';
+    } else if (a.eng === 'zero' || (a.eng === 'basic' && a.type === 'passive') || (a.budget === 'low' && a.eng !== 'high')) {
         plan = {
             badge: '英語力ゼロからでもOK',
             title: 'フィリピン → 豪加',
             titleSub: '2カ国留学スタートダッシュプラン',
             subtitle: 'セブ島3ヶ月集中 → オーストラリア or カナダへ',
-            counseling: `英語力に不安があるまま欧米に直行するのはリスクが高い選択です。まず<strong>物価が安く・マンツーマン授業が充実したフィリピン・セブ島</strong>で3〜4ヶ月間スパルタ英語漬け生活を。授業料・寮費・食費込みで月15〜25万円程度（学校やプランによって変動）と欧米と比べてコスパが高く、英語の基礎を集中的に固められます。自信がついてから豪州・カナダへ渡れば、<strong>現地での吸収速度が段違い</strong>。コスパ最強のルートです。<br><small style="font-size:0.75rem;color:var(--text-light);">※費用は為替レートや学校の種類により変動します。渡航前に最新情報をご確認ください。</small>`,
+            counseling: `英語力に不安があるまま欧米に直行するのはリスクが高い選択です。まず<strong>物価が安く・マンツーマン授業が充実したフィリピン・セブ島</strong>で3〜4ヶ月間スパルタ英語漬け生活を。授業料・寮費・食費込みで月15〜25万円程度（学校やプランにより変動）と欧米と比べてコスパが高く、英語の基礎を集中的に固められます。自信がついてから豪州・カナダへ渡れば、<strong>現地での吸収速度が段違い</strong>です。<br><small style="font-size:0.75rem;color:var(--text-light);">※費用は為替レートや学校の種類により変動します。渡航前に最新情報をご確認ください。</small>`,
             scores: [
-                { label: '英語上達速度', val: 98, color: 'var(--rose-deep)' },
-                { label: 'コストパフォーマンス', val: 88, color: 'var(--gold)' },
-                { label: '心理的安全性', val: 85, color: 'var(--sage)' },
-                { label: 'キャリア向上度', val: 70, color: 'var(--sky)' }
+                { label: '英語上達速度',       val: 98, color: 'var(--rose-deep)' },
+                { label: 'コストパフォーマンス', val: 88, color: 'var(--gold)'      },
+                { label: '心理的安全性',        val: 85, color: 'var(--sage)'      },
+                { label: 'キャリア向上度',      val: 70, color: 'var(--sky)'       }
             ],
             planItems: [
-                { icon: '🇵🇭', bg: '#FFF8E7', name: 'フィリピン・セブ島 3〜4ヶ月', desc: 'スパルタ語学学校でマンツーマン授業。授業料・寮費・食費込みで月15〜25万円程度。欧米留学の1/2〜1/3のコストで英語基礎を集中強化（為替により変動）' },
+                { icon: '🇵🇭', bg: '#FFF8E7', name: 'フィリピン・セブ島 3〜4ヶ月', desc: 'スパルタ語学学校でマンツーマン授業。月15〜25万円程度で英語基礎を集中強化（為替により変動）' },
                 { icon: '✈️', bg: '#FEF1F1', name: 'オーストラリア or カナダへ渡航', desc: '英語力がついた状態で渡航。語学学校→バイト→ローカルジョブへスムーズに移行' },
                 { icon: '💰', bg: '#F5F9F4', name: '現地で稼ぎながら滞在継続', desc: 'ワーキングホリデービザを活用。高時給の農業・工場・カフェで貯金しながら経験を積む' }
             ],
-            cities: [
-                { flag: '🇵🇭', name: 'セブ島', tag: 'スタート地点' },
-                { flag: '🇦🇺', name: 'ブリスベン', tag: '日本人少なめ' },
-                { flag: '🇦🇺', name: 'ゴールドコースト', tag: 'ビーチ×仕事' }
-            ],
             budget: '130〜250万円',
             duration: '6ヶ月〜1.5年',
-            tips: 'フィリピンでの語学学校は「認定校（SSP取得対応校）」を選ぶことが重要。学校によってはビザサポートが充実しています。エージェントを通じて優良校を選びましょう。'
         };
-    }
-    // 3. 出稼ぎ×節約ワーホリ
-    else if ((a.goal === 'work' || a.after === 'money') && (a.type === 'active' || a.type === 'planner') && a.eng !== 'zero') {
-        recommendedCountry = 'australia';
+    } else if ((a.goal === 'work' || a.after === 'money') && (a.type === 'active' || a.type === 'planner') && a.eng !== 'zero') {
         plan = {
             badge: '稼ぎながら英語を身につける',
             title: '出稼ぎワーホリ',
             titleSub: 'ローカルジョブ直行・高収入プラン',
             subtitle: 'オーストラリア / カナダ ― セカンドビザ活用',
-            counseling: `行動力と一定の英語力があるあなたには<strong>語学学校は最小限（1〜2ヶ月）</strong>でOK。渡航後すぐにカフェ・農業・ホテル・日系企業などの現地ジョブにアプライしましょう。特にオーストラリアは<strong>最低賃金が2025年7月時点で時給AUD24.95（約2,400円）</strong>と世界トップクラスの高さ。農業・工場のセカンドビザ業務と組み合わせれば年間200〜400万円規模の貯蓄も現実的です。なお時給の円換算は為替レートにより変動します。<br><small style="font-size:0.75rem;color:var(--text-light);">※最低賃金は毎年7月1日に見直されます。最新情報はFair Work Commissionの公式サイトでご確認ください。</small>`,
+            counseling: `行動力と一定の英語力があるあなたには<strong>語学学校は最小限（1〜2ヶ月）</strong>でOK。渡航後すぐにカフェ・農業・ホテル・日系企業などの現地ジョブにアプライしましょう。特にオーストラリアは<strong>最低賃金が2025年7月時点で時給AUD24.95</strong>と世界トップクラスの高さ。農業・工場のセカンドビザ業務と組み合わせれば年間200〜400万円規模の貯蓄も現実的です。<br><small style="font-size:0.75rem;color:var(--text-light);">※最低賃金は毎年7月1日に見直し。円換算は為替レートにより変動します。Fair Work Commission公式サイトで最新情報をご確認ください。</small>`,
             scores: [
-                { label: '収入獲得力', val: 95, color: 'var(--rose-deep)' },
-                { label: '英語上達速度', val: 75, color: 'var(--gold)' },
-                { label: 'コストパフォーマンス', val: 88, color: 'var(--sage)' },
-                { label: 'キャリア向上度', val: 70, color: 'var(--sky)' }
+                { label: '収入獲得力',         val: 95, color: 'var(--rose-deep)' },
+                { label: '英語上達速度',        val: 75, color: 'var(--gold)'      },
+                { label: 'コストパフォーマンス', val: 88, color: 'var(--sage)'      },
+                { label: 'キャリア向上度',      val: 70, color: 'var(--sky)'       }
             ],
             planItems: [
                 { icon: '🗣️', bg: '#FEF1F1', name: '語学学校 1〜2ヶ月（最小限）', desc: '英語の生活語彙をすばやく習得。コネクションと仕事探しの拠点づくりが目的' },
-                { icon: '🧑‍🍳', bg: '#FFF8E7', name: 'ローカルジョブに即アプライ', desc: 'カフェ・レストラン・農業・ホテル清掃など。最低時給はAUD24.95〜（2025年7月〜、為替変動あり）' },
+                { icon: '🧑‍🍳', bg: '#FFF8E7', name: 'ローカルジョブに即アプライ', desc: 'カフェ・レストラン・農業・ホテル清掃など。豪州最低時給はAUD24.95〜（2025年7月〜、為替変動あり）' },
                 { icon: '🌾', bg: '#F5F9F4', name: 'セカンドワーホリを狙う（豪州のみ）', desc: '農業等の指定業務88日以上でセカンドビザ取得可能。帰国を延ばして貯金を最大化' }
-            ],
-            cities: [
-                { flag: '🇦🇺', name: 'パース', tag: '高賃金・仕事豊富' },
-                { flag: '🇦🇺', name: 'ケアンズ', tag: '農業×観光リゾート' },
-                { flag: '🇨🇦', name: 'バンクーバー', tag: '日系企業が多い' }
             ],
             budget: '100〜180万円',
             duration: '1〜2年',
-            tips: '渡航前にファームジョブのエリア（クイーンズランド州バンダバーグ等）を事前にリサーチしておくと現地でのロスが減ります。JAM（日本人支援センター）の活用も◎'
         };
-    }
-    // 4. 英語留学×自己成長
-    else if (a.goal === 'english' || a.goal === 'reset' || a.after === 'growth') {
-        recommendedCountry = 'australia';
+    } else if (a.goal === 'english' || a.goal === 'values' || a.goal === 'curious' || a.goal === 'reset' || a.after === 'growth') {
         plan = {
             badge: '自分を変える留学',
             title: '王道語学留学',
             titleSub: '語学×自己成長フルコースプラン',
             subtitle: 'オーストラリア / カナダ ― 語学学校3〜6ヶ月',
-            counseling: `英語力向上と自己成長を目指すあなたには、まず<strong>3〜6ヶ月間の語学学校</strong>を強くすすめます。世界中から集まった留学生たちとの出会いが、あなたの世界観を大きく広げてくれます。語学学校のあとはワーキングホリデーに移行して現地での就労体験を。<strong>英語ができる・海外で働けた</strong>という事実は、帰国後の転職市場で明らかな差別化になります。焦らず、でも<strong>本気で</strong>取り組んでください。`,
+            counseling: `新しい価値観・経験を求めるあなたには、まず<strong>3〜6ヶ月間の語学学校</strong>を強くすすめます。世界中から集まった留学生たちとの出会いが、あなたの世界観を大きく広げてくれます。語学学校のあとはワーキングホリデーに移行して現地での就労体験を。<strong>英語ができる・海外で働けた</strong>という事実は、帰国後の転職市場で明らかな差別化になります。`,
             scores: [
-                { label: '英語上達速度', val: 90, color: 'var(--rose-deep)' },
-                { label: '自己成長度', val: 95, color: 'var(--gold)' },
-                { label: '心理的安全性', val: 80, color: 'var(--sage)' },
-                { label: 'キャリア向上度', val: 72, color: 'var(--sky)' }
+                { label: '英語上達速度',  val: 90, color: 'var(--rose-deep)' },
+                { label: '自己成長度',    val: 95, color: 'var(--gold)'      },
+                { label: '心理的安全性',  val: 80, color: 'var(--sage)'      },
+                { label: 'キャリア向上度', val: 72, color: 'var(--sky)'      }
             ],
             planItems: [
                 { icon: '📚', bg: '#FEF1F1', name: '語学学校 3〜6ヶ月', desc: '集中英語コース。General EnglishからIELTS対策まで目的に合わせて選択可能' },
                 { icon: '🌟', bg: '#FFF8E7', name: 'ホームステイ or シェアハウス', desc: '現地の文化・生活を体験。語学力と並行して「生きた英語」を習得' },
                 { icon: '💼', bg: '#F5F9F4', name: '語学後→ワーホリに移行', desc: '英語力がついた状態でバイト・仕事を開始。語学費用を少し回収しながら継続' }
             ],
-            cities: [
-                { flag: '🇦🇺', name: 'メルボルン', tag: 'オシャレ×多国籍' },
-                { flag: '🇦🇺', name: 'バイロンベイ', tag: 'ナチュラル×自由' },
-                { flag: '🇨🇦', name: 'バンクーバー', tag: '自然×都会の両立' }
-            ],
             budget: '150〜250万円',
             duration: '6ヶ月〜1年',
-            tips: '語学学校の最初のクラス分けテストは非常に重要。渡航前に少しでも勉強しておくと上のクラスに入れて吸収量が格段に変わります。'
         };
-    }
-    // 5. バランス型デフォルト
-    else {
-        recommendedCountry = 'australia';
+    } else {
         plan = {
             badge: 'バランス型おすすめプラン',
             title: '自由設計ワーホリ',
@@ -1152,70 +938,43 @@ function buildResult() {
             subtitle: 'オーストラリア or カナダ ― フレキシブルプラン',
             counseling: `あなたの回答は特定の方向に偏らない<strong>バランス型</strong>。それはむしろ、選択肢が広いということ。語学・仕事・旅行・自己成長をミックスした<strong>ワーキングホリデーが最も柔軟に対応できる選択</strong>です。まず3ヶ月語学学校でコネクションを作り、そこから仕事・旅行・学習と自分のペースで展開していきましょう。正解は一つじゃない。あなた自身が作っていくプランが一番です。`,
             scores: [
-                { label: '自由度・柔軟性', val: 95, color: 'var(--rose-deep)' },
-                { label: '英語上達速度', val: 78, color: 'var(--gold)' },
-                { label: '自己成長度', val: 85, color: 'var(--sage)' },
-                { label: 'コストパフォーマンス', val: 80, color: 'var(--sky)' }
+                { label: '自由度・柔軟性',     val: 95, color: 'var(--rose-deep)' },
+                { label: '英語上達速度',       val: 78, color: 'var(--gold)'      },
+                { label: '自己成長度',         val: 85, color: 'var(--sage)'      },
+                { label: 'コストパフォーマンス', val: 80, color: 'var(--sky)'     }
             ],
             planItems: [
                 { icon: '✈️', bg: '#FEF1F1', name: '語学学校 2〜3ヶ月からスタート', desc: '友達・コネクション作りが最初のミッション。ここが後の展開を左右する' },
                 { icon: '🔄', bg: '#F5F9F4', name: '仕事・旅行・学習を自由にミックス', desc: 'ワーホリビザの特権を最大活用。農業・カフェ・旅行と自在にアレンジ可能' },
                 { icon: '🌱', bg: '#F0F5F9', name: 'キャリアに活かせる体験を積む', desc: '語学力＋海外就労経験は帰国後の転職市場で強力なアドバンテージに' }
             ],
-            cities: [
-                { flag: '🇦🇺', name: 'メルボルン', tag: '生活しやすい' },
-                { flag: '🇨🇦', name: 'バンクーバー', tag: '自然×都市' },
-                { flag: '🇦🇺', name: 'シドニー', tag: '活気と多様性' }
-            ],
             budget: '130〜220万円',
             duration: '6ヶ月〜1年',
-            tips: '出発前に「何を達成したら成功か」を1〜3個決めておくこと。目標が明確な人とそうでない人では、帰国時の充実度に大きな差が出ます。'
         };
     }
-
-    // Determine counselor from cities (check if canada city appears)
-    const hasCanada = plan.cities.some(c => c.flag === '🇨🇦');
-    const hasAustralia = plan.cities.some(c => c.flag === '🇦🇺');
-
-    // Choose counselor: if primary cities are Canada → Haruka, else → Tomomi (Australia)
-    // Logic: if more Canada cities than Australia, show Haruka. Otherwise Tomomi.
-    const canadaCount = plan.cities.filter(c => c.flag === '🇨🇦').length;
-    const australiaCount = plan.cities.filter(c => c.flag === '🇦🇺').length;
-
-    let counselor = null;
-    if (australiaCount >= canadaCount && hasAustralia) {
-        counselor = 'tomomi';
-    } else if (canadaCount > australiaCount && hasCanada) {
-        counselor = 'haruka';
-    } else if (hasAustralia) {
-        counselor = 'tomomi';
-    }
-
-    // ─── DOM更新 ───
+ 
+    const cities    = getCities(a);
+    const counselor = getCounselor(a, cities);
+ 
+    // ── DOM更新 ──
     document.getElementById('res-badge').textContent = plan.badge;
     document.getElementById('res-title').innerHTML = `<strong>${plan.title}</strong><br><small style="font-size:1rem;font-weight:300;color:var(--text-mid)">${plan.titleSub}</small>`;
     document.getElementById('res-subtitle').textContent = plan.subtitle;
     document.getElementById('res-counseling').innerHTML = plan.counseling;
-
-    // Score bars
+ 
     const sb = document.getElementById('score-bars');
     sb.innerHTML = plan.scores.map(s => `
         <div class="score-row">
             <div class="score-label">${s.label}</div>
-            <div class="score-bar-track">
-                <div class="score-bar-fill" style="background:${s.color};width:0%" data-val="${s.val}"></div>
-            </div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="background:${s.color};width:0%" data-val="${s.val}"></div></div>
             <div class="score-val">${s.val}</div>
         </div>
     `).join('');
-
+ 
     setTimeout(() => {
-        document.querySelectorAll('.score-bar-fill').forEach(el => {
-            el.style.width = el.dataset.val + '%';
-        });
+        document.querySelectorAll('.score-bar-fill').forEach(el => { el.style.width = el.dataset.val + '%'; });
     }, 200);
-
-    // Plan items
+ 
     document.getElementById('res-plan-items').innerHTML = plan.planItems.map(p => `
         <div class="plan-item">
             <div class="plan-icon" style="background:${p.bg}">${p.icon}</div>
@@ -1225,17 +984,15 @@ function buildResult() {
             </div>
         </div>
     `).join('');
-
-    // Cities
-    document.getElementById('res-cities').innerHTML = plan.cities.map(c => `
+ 
+    document.getElementById('res-cities').innerHTML = cities.map(c => `
         <div class="city-card">
             <div class="city-flag">${c.flag}</div>
             <div class="city-name">${c.name}</div>
             <div class="city-tag">${c.tag}</div>
         </div>
     `).join('');
-
-    // Info
+ 
     document.getElementById('res-info-row').innerHTML = `
         <div class="info-chip">
             <div class="info-chip-label">Estimated Budget</div>
@@ -1246,13 +1003,12 @@ function buildResult() {
             <div class="info-chip-value">${plan.duration}</div>
         </div>
     `;
-
-    document.getElementById('res-tips-text').textContent = plan.tips;
-
-    // Counselor
+ 
+    // カウンセラー
     const counselorSection = document.getElementById('counselor-section');
-    const counselorCard = document.getElementById('counselor-card');
-
+    const counselorCard    = document.getElementById('counselor-card');
+    const ctaPrimary       = document.getElementById('cta-primary-text');
+ 
     if (counselor === 'tomomi') {
         counselorSection.style.display = 'block';
         counselorCard.innerHTML = `
@@ -1269,8 +1025,8 @@ function buildResult() {
                 <div class="counselor-cta-note">🌿 オーストラリアのことなら何でもお気軽に！</div>
             </div>
         `;
-        document.getElementById('cta-primary-text').textContent = '🌿 Tomomiに無料相談する';
-    } else if (counselor === 'haruka') {
+        ctaPrimary.textContent = '🌿 Tomomiに無料で相談してみる';
+    } else {
         counselorSection.style.display = 'block';
         counselorCard.innerHTML = `
             <div class="counselor-avatar">
@@ -1286,13 +1042,10 @@ function buildResult() {
                 <div class="counselor-cta-note">🍁 カナダのリアルな情報をお伝えします！</div>
             </div>
         `;
-        document.getElementById('cta-primary-text').textContent = '🍁 Harukaに無料相談する';
-    } else {
-        counselorSection.style.display = 'none';
-        document.getElementById('cta-primary-text').textContent = '🌿 無料カウンセリングに申し込む';
+        ctaPrimary.textContent = '🍁 Harukaに無料で相談してみる';
     }
 }
-
+ 
 function resetQuiz() {
     current = 0;
     answers = {};
@@ -1301,8 +1054,7 @@ function resetQuiz() {
     document.getElementById('quiz-screen').style.display = 'block';
     render();
 }
-
-// Init
+ 
 render();
 </script>
 </body>

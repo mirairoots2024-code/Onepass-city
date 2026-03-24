@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -34,7 +33,6 @@
             overflow-x: hidden;
         }
 
-        /* ── Background Decoration ── */
         body::before {
             content: '';
             position: fixed;
@@ -54,7 +52,6 @@
             z-index: 0;
         }
 
-        /* ── Layout ── */
         .page {
             position: relative;
             z-index: 1;
@@ -235,16 +232,12 @@
             color: var(--text-mid);
             font-size: 0.72rem;
             font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            place-items: center;
             font-family: 'Cormorant Garamond', serif;
             letter-spacing: 0;
             transition: all 0.25s ease;
         }
-
-        /* Hack for ::before content with flex */
-        .opt-btn::before { display: grid; place-items: center; }
 
         .opt-btn:hover {
             border-color: var(--rose);
@@ -262,6 +255,37 @@
             transform: translateX(5px) scale(0.98);
         }
 
+        /* ── Back Button ── */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.76rem;
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
+            cursor: pointer;
+            padding: 8px 0;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .back-btn:hover {
+            color: var(--rose-deep);
+        }
+
+        .back-btn svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover svg {
+            transform: translateX(-3px);
+        }
+
         /* ── Notice ── */
         .notice-box {
             margin-top: 28px;
@@ -274,7 +298,6 @@
             line-height: 1.8;
         }
 
-        /* ── Decorative flower ── */
         .deco-flower {
             text-align: center;
             font-size: 1.4rem;
@@ -457,8 +480,6 @@
             flex-shrink: 0;
         }
 
-        .plan-item-content {}
-
         .plan-item-name {
             font-size: 0.88rem;
             font-weight: 500;
@@ -543,12 +564,12 @@
 
         .info-chip-value {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--text);
             font-weight: 400;
         }
 
-        /* ── Warning / Tips ── */
+        /* ── Tips ── */
         .tips-card {
             background: linear-gradient(135deg, #F5F9F4 0%, #EDF3F0 100%);
             border-radius: 16px;
@@ -570,6 +591,92 @@
             font-size: 0.82rem;
             color: var(--text-mid);
             line-height: 1.7;
+        }
+
+        /* ── Counselor Card ── */
+        .counselor-section {
+            margin-bottom: 28px;
+        }
+
+        .counselor-section-title {
+            font-size: 0.68rem;
+            letter-spacing: 0.18em;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .counselor-card {
+            background: linear-gradient(135deg, #FEF8F8 0%, #FBF0F0 100%);
+            border: 1.5px solid var(--rose-light);
+            border-radius: 22px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .counselor-avatar {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 16px rgba(196,132,122,0.2);
+            flex-shrink: 0;
+            background: var(--rose-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            overflow: hidden;
+        }
+
+        .counselor-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .counselor-info {}
+
+        .counselor-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+        .counselor-tags {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .counselor-tag {
+            font-size: 0.72rem;
+            color: var(--text-mid);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            line-height: 1.4;
+        }
+
+        .counselor-tag::before {
+            content: '✦';
+            color: var(--rose);
+            font-size: 0.55rem;
+            flex-shrink: 0;
+        }
+
+        .counselor-cta-note {
+            font-size: 0.72rem;
+            color: var(--rose-deep);
+            font-weight: 500;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--rose-light);
         }
 
         /* ── CTA ── */
@@ -622,6 +729,7 @@
             letter-spacing: 0.05em;
             cursor: pointer;
             transition: all 0.25s;
+            font-family: 'DM Sans', 'Noto Sans JP', sans-serif;
         }
 
         .cta-secondary:hover {
@@ -640,10 +748,6 @@
             to { opacity: 1; transform: scale(1); }
         }
 
-        .fade-up { animation: fadeUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-        .scale-in { animation: scaleIn 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
-
-        /* stagger */
         .stagger > * { opacity: 0; }
         .stagger > *:nth-child(1) { animation: fadeUp 0.5s 0.05s ease forwards; }
         .stagger > *:nth-child(2) { animation: fadeUp 0.5s 0.12s ease forwards; }
@@ -664,6 +768,7 @@
             h1 { font-size: 2rem; }
             .cities-grid { grid-template-columns: 1fr 1fr; }
             .info-row { grid-template-columns: 1fr; }
+            .counselor-card { flex-direction: column; text-align: center; align-items: center; }
         }
     </style>
 </head>
@@ -707,42 +812,41 @@
             <div class="result-subtitle" id="res-subtitle"></div>
         </div>
 
-        <!-- Score Bars -->
         <div class="score-section" id="score-section">
             <div class="score-section-title">あなたの適性スコア</div>
             <div id="score-bars"></div>
         </div>
 
-        <!-- Counseling Note -->
         <div class="counseling-card">
             <div class="counseling-label">Counselor's Note</div>
             <div class="counseling-text" id="res-counseling"></div>
         </div>
 
-        <!-- Plan Detail -->
         <div class="plan-detail">
             <div class="plan-detail-title">おすすめプラン詳細</div>
             <div id="res-plan-items"></div>
         </div>
 
-        <!-- Cities -->
         <div class="cities-section">
             <div class="cities-title">Recommended Cities</div>
             <div class="cities-grid" id="res-cities"></div>
         </div>
 
-        <!-- Budget & Duration -->
         <div class="info-row" id="res-info-row"></div>
 
-        <!-- Tips -->
         <div class="tips-card" id="res-tips">
             <div class="tips-label">✦ Success Point</div>
             <div class="tips-text" id="res-tips-text"></div>
         </div>
 
-        <!-- CTA -->
+        <!-- Counselor Recommendation -->
+        <div class="counselor-section" id="counselor-section" style="display:none;">
+            <div class="counselor-section-title">担当カウンセラーのご紹介</div>
+            <div class="counselor-card" id="counselor-card"></div>
+        </div>
+
         <div class="cta-group">
-            <a href="#" class="cta-primary"><span>🌿 無料カウンセリングに申し込む</span></a>
+            <a href="#" class="cta-primary"><span id="cta-primary-text">🌿 無料カウンセリングに申し込む</span></a>
             <button class="cta-secondary" onclick="resetQuiz()">もう一度診断する</button>
         </div>
 
@@ -752,8 +856,8 @@
         </p>
     </div>
 
-</div><!-- /card -->
-</div><!-- /page -->
+</div>
+</div>
 
 <script>
 const questions = [
@@ -774,7 +878,7 @@ const questions = [
             { text: "ほぼゼロ…中学レベルも怪しい", v: { eng: 'zero' } },
             { text: "基礎はある。でも会話は全く自信ない", v: { eng: 'basic' } },
             { text: "日常会話ならなんとかなる（英検2級程度）", v: { eng: 'mid' } },
-            { text: "ビジネスや専門的な場面でも使いたい", v: { eng: 'high' } }
+            { text: "ビジネスや専門的な場面でも問題ない", v: { eng: 'high' } }
         ]
     },
     {
@@ -841,6 +945,8 @@ const questions = [
 
 let current = 0;
 let answers = {};
+// answersHistory: array of answer values at each step, for back navigation
+let answersHistory = [];
 
 function render() {
     const content = document.getElementById('q-content');
@@ -849,7 +955,13 @@ function render() {
 
     setTimeout(() => {
         const d = questions[current];
+        const showBack = current > 0;
+
         content.innerHTML = `
+            ${showBack ? `<button class="back-btn" onclick="goBack()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                前の質問に戻る
+            </button>` : ''}
             <span class="q-num-label">Question ${current + 1} of ${questions.length}</span>
             <div class="q-text">${d.q}${d.sub ? `<br><small style="font-size:0.72rem;color:var(--text-light);font-family:'DM Sans',sans-serif;">${d.sub}</small>` : ''}</div>
             <div class="options-grid stagger">
@@ -870,10 +982,20 @@ function render() {
 }
 
 function next(i) {
+    // Save the current answer state snapshot for back navigation
+    answersHistory.push({ index: current, answers: { ...answers } });
     answers = { ...answers, ...questions[current].options[i].v };
     current++;
     if (current < questions.length) render();
     else showResult();
+}
+
+function goBack() {
+    if (answersHistory.length === 0) return;
+    const prev = answersHistory.pop();
+    current = prev.index;
+    answers = prev.answers;
+    render();
 }
 
 function showResult() {
@@ -895,12 +1017,13 @@ function showResult() {
 
 function buildResult() {
     const a = answers;
-
-    // ─── 判定ロジック ───
     let plan = {};
+    // Track which country is recommended
+    let recommendedCountry = null; // 'australia', 'canada', 'both', 'philippines'
 
-    // 1. 大人の本格進学（31歳以上 or 予算350万以上 or キャリア+学位志向）
+    // 1. 大人の本格進学
     if (a.age === 'adult' || a.budget === 'pro' || (a.goal === 'career' && a.after === 'degree')) {
+        recommendedCountry = 'australia'; // primary recommendation
         plan = {
             badge: '本格キャリアアッププラン',
             title: '大人の本気進学',
@@ -928,22 +1051,23 @@ function buildResult() {
             tips: '渡航前に英語力をある程度仕上げておくと、入学できるコースの幅が大きく広がります。フィリピン3ヶ月→オーストラリア進学の2カ国プランも人気です。'
         };
     }
-    // 2. フィリピン→豪加 2カ国プラン（英語ゼロ or 予算少 or 心細いタイプ）
+    // 2. フィリピン→豪加 2カ国プラン
     else if (a.eng === 'zero' || (a.eng === 'basic' && a.type === 'passive') || (a.budget === 'low' && a.eng !== 'high')) {
+        recommendedCountry = 'australia';
         plan = {
             badge: '英語力ゼロからでもOK',
             title: 'フィリピン → 豪加',
             titleSub: '2カ国留学スタートダッシュプラン',
             subtitle: 'セブ島3ヶ月集中 → オーストラリア or カナダへ',
-            counseling: `英語力に不安があるまま欧米に直行するのはリスクが高い選択です。まず<strong>物価が安く・マンツーマン授業が充実したフィリピン・セブ島</strong>で3〜4ヶ月間スパルタ英語漬け生活を。授業料・生活費合わせて月5〜7万円と激安なので貯金を温存しながら英語の基礎を固められます。自信がついてから豪州・カナダへ渡れば、<strong>現地での吸収速度が段違い</strong>。コスパ最強のルートです。`,
+            counseling: `英語力に不安があるまま欧米に直行するのはリスクが高い選択です。まず<strong>物価が安く・マンツーマン授業が充実したフィリピン・セブ島</strong>で3〜4ヶ月間スパルタ英語漬け生活を。授業料・寮費・食費込みで月15〜25万円程度（学校やプランによって変動）と欧米と比べてコスパが高く、英語の基礎を集中的に固められます。自信がついてから豪州・カナダへ渡れば、<strong>現地での吸収速度が段違い</strong>。コスパ最強のルートです。<br><small style="font-size:0.75rem;color:var(--text-light);">※費用は為替レートや学校の種類により変動します。渡航前に最新情報をご確認ください。</small>`,
             scores: [
                 { label: '英語上達速度', val: 98, color: 'var(--rose-deep)' },
-                { label: 'コストパフォーマンス', val: 92, color: 'var(--gold)' },
+                { label: 'コストパフォーマンス', val: 88, color: 'var(--gold)' },
                 { label: '心理的安全性', val: 85, color: 'var(--sage)' },
                 { label: 'キャリア向上度', val: 70, color: 'var(--sky)' }
             ],
             planItems: [
-                { icon: '🇵🇭', bg: '#FFF8E7', name: 'フィリピン・セブ島 3〜4ヶ月', desc: 'スパルタ語学学校でマンツーマン授業。月6〜8万円で英語基礎を徹底的に固める' },
+                { icon: '🇵🇭', bg: '#FFF8E7', name: 'フィリピン・セブ島 3〜4ヶ月', desc: 'スパルタ語学学校でマンツーマン授業。授業料・寮費・食費込みで月15〜25万円程度。欧米留学の1/2〜1/3のコストで英語基礎を集中強化（為替により変動）' },
                 { icon: '✈️', bg: '#FEF1F1', name: 'オーストラリア or カナダへ渡航', desc: '英語力がついた状態で渡航。語学学校→バイト→ローカルジョブへスムーズに移行' },
                 { icon: '💰', bg: '#F5F9F4', name: '現地で稼ぎながら滞在継続', desc: 'ワーキングホリデービザを活用。高時給の農業・工場・カフェで貯金しながら経験を積む' }
             ],
@@ -952,19 +1076,20 @@ function buildResult() {
                 { flag: '🇦🇺', name: 'ブリスベン', tag: '日本人少なめ' },
                 { flag: '🇦🇺', name: 'ゴールドコースト', tag: 'ビーチ×仕事' }
             ],
-            budget: '120〜220万円',
+            budget: '130〜250万円',
             duration: '6ヶ月〜1.5年',
-            tips: 'フィリピンでの語学学校は「認定校」を選ぶことが重要。学校選びを誤ると効果が半減します。エージェントを通じて優良校を選びましょう。'
+            tips: 'フィリピンでの語学学校は「認定校（SSP取得対応校）」を選ぶことが重要。学校によってはビザサポートが充実しています。エージェントを通じて優良校を選びましょう。'
         };
     }
-    // 3. 出稼ぎ×節約ワーホリ（お金を稼ぎたい＋行動力あり）
+    // 3. 出稼ぎ×節約ワーホリ
     else if ((a.goal === 'work' || a.after === 'money') && (a.type === 'active' || a.type === 'planner') && a.eng !== 'zero') {
+        recommendedCountry = 'australia';
         plan = {
             badge: '稼ぎながら英語を身につける',
             title: '出稼ぎワーホリ',
             titleSub: 'ローカルジョブ直行・高収入プラン',
             subtitle: 'オーストラリア / カナダ ― セカンドビザ活用',
-            counseling: `行動力と一定の英語力があるあなたには<strong>語学学校は最小限（1〜2ヶ月）</strong>でOK。渡航後すぐにカフェ・農業・ホテル・日系企業などの現地ジョブにアプライしましょう。特にオーストラリアは<strong>最低賃金が時給約2,200円（AUD23〜）</strong>で、農業・工場のセカンドビザ業務と組み合わせれば年間300〜500万円の貯蓄も現実的。キャリアブランクを作らず帰国後の転職活動に活かせます。`,
+            counseling: `行動力と一定の英語力があるあなたには<strong>語学学校は最小限（1〜2ヶ月）</strong>でOK。渡航後すぐにカフェ・農業・ホテル・日系企業などの現地ジョブにアプライしましょう。特にオーストラリアは<strong>最低賃金が2025年7月時点で時給AUD24.95（約2,400円）</strong>と世界トップクラスの高さ。農業・工場のセカンドビザ業務と組み合わせれば年間200〜400万円規模の貯蓄も現実的です。なお時給の円換算は為替レートにより変動します。<br><small style="font-size:0.75rem;color:var(--text-light);">※最低賃金は毎年7月1日に見直されます。最新情報はFair Work Commissionの公式サイトでご確認ください。</small>`,
             scores: [
                 { label: '収入獲得力', val: 95, color: 'var(--rose-deep)' },
                 { label: '英語上達速度', val: 75, color: 'var(--gold)' },
@@ -973,8 +1098,8 @@ function buildResult() {
             ],
             planItems: [
                 { icon: '🗣️', bg: '#FEF1F1', name: '語学学校 1〜2ヶ月（最小限）', desc: '英語の生活語彙をすばやく習得。コネクションと仕事探しの拠点づくりが目的' },
-                { icon: '🧑‍🍳', bg: '#FFF8E7', name: 'ローカルジョブに即アプライ', desc: 'カフェ・レストラン・農業・ホテル清掃など。時給AUD23〜27が相場' },
-                { icon: '🌾', bg: '#F5F9F4', name: 'セカンドワーホリを狙う（豪州のみ）', desc: '農業等の指定業務88日で2年目ビザ取得。帰国を延ばして貯金を最大化' }
+                { icon: '🧑‍🍳', bg: '#FFF8E7', name: 'ローカルジョブに即アプライ', desc: 'カフェ・レストラン・農業・ホテル清掃など。最低時給はAUD24.95〜（2025年7月〜、為替変動あり）' },
+                { icon: '🌾', bg: '#F5F9F4', name: 'セカンドワーホリを狙う（豪州のみ）', desc: '農業等の指定業務88日以上でセカンドビザ取得可能。帰国を延ばして貯金を最大化' }
             ],
             cities: [
                 { flag: '🇦🇺', name: 'パース', tag: '高賃金・仕事豊富' },
@@ -983,11 +1108,12 @@ function buildResult() {
             ],
             budget: '100〜180万円',
             duration: '1〜2年',
-            tips: '渡航前にFarm仕事リストや農業エリア（バンダバーグ等）を事前にリサーチしておくと現地でのロスが減ります。JAM（日本人支援センター）の活用も◎'
+            tips: '渡航前にファームジョブのエリア（クイーンズランド州バンダバーグ等）を事前にリサーチしておくと現地でのロスが減ります。JAM（日本人支援センター）の活用も◎'
         };
     }
-    // 4. 英語留学×自己成長（語学上達・自分を変えたい）
+    // 4. 英語留学×自己成長
     else if (a.goal === 'english' || a.goal === 'reset' || a.after === 'growth') {
+        recommendedCountry = 'australia';
         plan = {
             badge: '自分を変える留学',
             title: '王道語学留学',
@@ -1015,8 +1141,9 @@ function buildResult() {
             tips: '語学学校の最初のクラス分けテストは非常に重要。渡航前に少しでも勉強しておくと上のクラスに入れて吸収量が格段に変わります。'
         };
     }
-    // 5. デフォルト（バランス型）
+    // 5. バランス型デフォルト
     else {
+        recommendedCountry = 'australia';
         plan = {
             badge: 'バランス型おすすめプラン',
             title: '自由設計ワーホリ',
@@ -1043,6 +1170,24 @@ function buildResult() {
             duration: '6ヶ月〜1年',
             tips: '出発前に「何を達成したら成功か」を1〜3個決めておくこと。目標が明確な人とそうでない人では、帰国時の充実度に大きな差が出ます。'
         };
+    }
+
+    // Determine counselor from cities (check if canada city appears)
+    const hasCanada = plan.cities.some(c => c.flag === '🇨🇦');
+    const hasAustralia = plan.cities.some(c => c.flag === '🇦🇺');
+
+    // Choose counselor: if primary cities are Canada → Haruka, else → Tomomi (Australia)
+    // Logic: if more Canada cities than Australia, show Haruka. Otherwise Tomomi.
+    const canadaCount = plan.cities.filter(c => c.flag === '🇨🇦').length;
+    const australiaCount = plan.cities.filter(c => c.flag === '🇦🇺').length;
+
+    let counselor = null;
+    if (australiaCount >= canadaCount && hasAustralia) {
+        counselor = 'tomomi';
+    } else if (canadaCount > australiaCount && hasCanada) {
+        counselor = 'haruka';
+    } else if (hasAustralia) {
+        counselor = 'tomomi';
     }
 
     // ─── DOM更新 ───
@@ -1093,20 +1238,64 @@ function buildResult() {
     document.getElementById('res-info-row').innerHTML = `
         <div class="info-chip">
             <div class="info-chip-label">Estimated Budget</div>
-            <div class="info-chip-value" style="font-size:1.1rem">${plan.budget}</div>
+            <div class="info-chip-value">${plan.budget}</div>
         </div>
         <div class="info-chip">
             <div class="info-chip-label">Recommended Stay</div>
-            <div class="info-chip-value" style="font-size:1.1rem">${plan.duration}</div>
+            <div class="info-chip-value">${plan.duration}</div>
         </div>
     `;
 
     document.getElementById('res-tips-text').textContent = plan.tips;
+
+    // Counselor
+    const counselorSection = document.getElementById('counselor-section');
+    const counselorCard = document.getElementById('counselor-card');
+
+    if (counselor === 'tomomi') {
+        counselorSection.style.display = 'block';
+        counselorCard.innerHTML = `
+            <div class="counselor-avatar">
+                <img src="スクリーンショット 2024-12-07 午前7.28.34.png" alt="Tomomi" onerror="this.parentElement.textContent='🌿'">
+            </div>
+            <div class="counselor-info">
+                <div class="counselor-name">Tomomi</div>
+                <div class="counselor-tags">
+                    <div class="counselor-tag">オーストラリア永住権保持</div>
+                    <div class="counselor-tag">オーストラリア語学＆専門留学経験</div>
+                    <div class="counselor-tag">ワーホリ＆現地就労経験</div>
+                </div>
+                <div class="counselor-cta-note">🌿 オーストラリアのことなら何でもお気軽に！</div>
+            </div>
+        `;
+        document.getElementById('cta-primary-text').textContent = '🌿 Tomomiに無料相談する';
+    } else if (counselor === 'haruka') {
+        counselorSection.style.display = 'block';
+        counselorCard.innerHTML = `
+            <div class="counselor-avatar">
+                <img src="スクリーンショット 2024-12-07 午前7.12.01 (1).png" alt="Haruka" onerror="this.parentElement.textContent='🍁'">
+            </div>
+            <div class="counselor-info">
+                <div class="counselor-name">Haruka</div>
+                <div class="counselor-tags">
+                    <div class="counselor-tag">カルガリー在住</div>
+                    <div class="counselor-tag">カナダ留学＆ワーホリ経験</div>
+                    <div class="counselor-tag">Jaos留学カウンセラー資格保有</div>
+                </div>
+                <div class="counselor-cta-note">🍁 カナダのリアルな情報をお伝えします！</div>
+            </div>
+        `;
+        document.getElementById('cta-primary-text').textContent = '🍁 Harukaに無料相談する';
+    } else {
+        counselorSection.style.display = 'none';
+        document.getElementById('cta-primary-text').textContent = '🌿 無料カウンセリングに申し込む';
+    }
 }
 
 function resetQuiz() {
     current = 0;
     answers = {};
+    answersHistory = [];
     document.getElementById('result-screen').style.display = 'none';
     document.getElementById('quiz-screen').style.display = 'block';
     render();

@@ -214,8 +214,8 @@
         }
         .city-card:hover { border-color: var(--rose); transform: translateY(-3px); box-shadow: 0 6px 20px rgba(176,94,86,0.15); }
         .city-flag { font-size: 1.4rem; margin-bottom: 6px; }
-        .city-name { font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-        .city-tag { font-size: 0.66rem; color: var(--text-mid); font-weight: 400; }
+        .city-name { font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 0; }
+        .city-tag { display: none; }
  
         /* ── Counseling ── */
         .counseling-card {
@@ -520,8 +520,8 @@ const questions = [
         {text:"🇦🇺 オーストラリア",             v:{country:'australia'}},
         {text:"🇨🇦 カナダ",                     v:{country:'canada'}},
         {text:"🇵🇭 フィリピンのみ",             v:{country:'philippines'}},
-        {text:"🇵🇭 フィリピン → 🇦🇺", v:{country:'phil_au'}},
-        {text:"🇵🇭 フィリピン → 🇨🇦",  v:{country:'phil_ca'}},
+        {text:"🇵🇭＋🇦🇺 フィリピン → オーストラリア", v:{country:'phil_au'}},
+        {text:"🇵🇭＋🇨🇦 フィリピン → カナダ",  v:{country:'phil_ca'}},
         {text:"🤔 まだ悩んでいる",               v:{country:'undecided'}}
       ]
     },
